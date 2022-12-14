@@ -12,12 +12,18 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.1" />
+    <PackageReference Include="Auth0.ManagementApi" Version="7.17.4" />
+    <PackageReference Include="Auth0.AuthenticationApi" Version="7.17.4" />
+    <PackageReference Include="Auth0.Core" Version="7.17.4" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="DTOs\" />
     <None Remove="Mapping\" />
+    <None Remove="Auth0.ManagementApi" />
+    <None Remove="Auth0.AuthenticationApi" />
+    <None Remove="Auth0.Core" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />

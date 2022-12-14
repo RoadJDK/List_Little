@@ -1,0 +1,49 @@
+<nz-divider class="divider" nzOrientation="center" nzText="List Little"></nz-divider>
+<div class="center">
+  <div class="content">
+    <ng-container *ngIf="auth.user$ | async as user">
+      <nz-affix [nzOffsetTop]="offset">
+        <h1>Hallo, {{ user.name }}! <span class="logout pointer" nz-icon nzType="logout" nzTheme="outline" (click)="logout()"></span></h1>
+        <nz-input-group [nzPrefix]="suffixIconSearch" [nzSuffix]="inputClearTpl">
+          <input type="text" nz-input [(ngModel)]="personSearch" (ngModelChange)="onChange($event)" [nzAutocomplete]="auto" placeholder="Suche eine Person" />
+          <nz-autocomplete [nzDataSource]="filteredOptions" nzBackfill #auto></nz-autocomplete>
+        </nz-input-group>
+        <ng-template #inputClearTpl>
+          <span
+            nz-icon
+            class="ant-input-clear-icon"
+            nzTheme="fill"
+            nzType="close-circle"
+            *ngIf="personSearch"
+            (click)="personSearch = ''"
+          ></span>
+        </ng-template>
+        <ng-template #suffixIconSearch>
+          <span class="pointer" nz-icon nzType="search"></span>
+        </ng-template>
+      </nz-affix>
+    </ng-container>
+    <ng-container *ngFor="let person of filteredOptions">
+      <nz-card class="card">
+        <div nz-row>
+          <div nz-col nzSpan="6">
+            <p class="title">{{ person }}</p>
+            <img
+            class="pointer"
+            nz-image
+            width="100px"
+            height="100px"
+            nzSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            alt=""
+          />
+          </div>
+          <div nz-col nzSpan="12">
+            <p>Wiesenstrasse 54</p>
+            <p>3014 Bern</p>
+            <p>lac121115@iet-gibb.ch</p>
+          </div>
+        </div>
+      </nz-card>
+    </ng-container>
+  </div>
+</div>
