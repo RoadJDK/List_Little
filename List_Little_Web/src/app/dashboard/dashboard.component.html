@@ -3,7 +3,7 @@
   <div class="content">
     <ng-container *ngIf="auth.user$ | async as user">
       <nz-affix [nzOffsetTop]="offset">
-        <h1>Hallo, {{ user.name }}! <span class="logout pointer" nz-icon nzType="logout" nzTheme="outline" (click)="logout()"></span></h1>
+        <h1><span>Hallo, </span> <span class="username">{{ user.name }}! </span> <span class="logout pointer" nz-icon nzType="logout" nzTheme="outline" (click)="logout()"></span></h1>
         <nz-input-group [nzPrefix]="suffixIconSearch" [nzSuffix]="inputClearTpl">
           <input type="text" nz-input [(ngModel)]="personSearch" (ngModelChange)="onChange($event)" [nzAutocomplete]="auto" placeholder="Suche eine Person" />
           <nz-autocomplete [nzDataSource]="filteredOptions" nzBackfill #auto></nz-autocomplete>
