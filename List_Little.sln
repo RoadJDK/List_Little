@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List_Little_CrossCutting", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List_Little_Domain", "List_Little_Domain\List_Little_Domain.csproj", "{568F994C-B4F2-4583-ABEE-800DFA6A11B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List_Little_Business_Contracts", "List_Little_Business_Contracts\List_Little_Business_Contracts.csproj", "{EE6912ED-8FD0-4C65-B10D-CB89D565BB12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List_Little_Infrastructure_Contracts", "List_Little_Infrastructure_Contracts\List_Little_Infrastructure_Contracts.csproj", "{92442CA2-E48F-49CC-B5CD-19FB4C699049}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{568F994C-B4F2-4583-ABEE-800DFA6A11B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{568F994C-B4F2-4583-ABEE-800DFA6A11B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{568F994C-B4F2-4583-ABEE-800DFA6A11B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6912ED-8FD0-4C65-B10D-CB89D565BB12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6912ED-8FD0-4C65-B10D-CB89D565BB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6912ED-8FD0-4C65-B10D-CB89D565BB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6912ED-8FD0-4C65-B10D-CB89D565BB12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92442CA2-E48F-49CC-B5CD-19FB4C699049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92442CA2-E48F-49CC-B5CD-19FB4C699049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92442CA2-E48F-49CC-B5CD-19FB4C699049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92442CA2-E48F-49CC-B5CD-19FB4C699049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
