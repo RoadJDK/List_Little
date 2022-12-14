@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using List_Little_Api.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace List_Little_Api.Controllers;
 
-[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class PersonController : ControllerBase
@@ -16,9 +16,16 @@ public class PersonController : ControllerBase
     }
 
     [HttpGet]
-    public bool GetAll()
+    public ActionResult<Person> GetAll()
     {
-        return true;
+        try
+        {
+            return Ok();
+        }
+        catch (Exception)
+        {
+            return BadRequest();
+        }
     }
 }
 
