@@ -15,6 +15,8 @@
     <PackageReference Include="Auth0.ManagementApi" Version="7.17.4" />
     <PackageReference Include="Auth0.AuthenticationApi" Version="7.17.4" />
     <PackageReference Include="Auth0.Core" Version="7.17.4" />
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,9 +26,22 @@
     <None Remove="Auth0.ManagementApi" />
     <None Remove="Auth0.AuthenticationApi" />
     <None Remove="Auth0.Core" />
+    <None Remove="AutoMapper" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="Mapping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\List_Little_Domain\List_Little_Domain.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\List_Little_Business\List_Little_Business.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\List_Little_CrossCutting\List_Little_CrossCutting.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
