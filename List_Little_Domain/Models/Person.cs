@@ -11,5 +11,6 @@ namespace List_Little_Domain.Models
         int PLZ { get; set; }
         string Location { get; set; }
         string EMail { get; set; }
+        FileStream Image { get; set; }
     }
 }
