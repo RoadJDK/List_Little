@@ -27,7 +27,7 @@ public class PersonController : ControllerBase
         try
         {
             var personList = Service.GetAll();
-            var mappedEntities = Mapper.Map<Person>(personList);
+            var mappedEntities = personList.Select(Mapper.Map<Person>);
             return Ok(personList);
         }
         catch (Exception)
@@ -36,4 +36,3 @@ public class PersonController : ControllerBase
         }
     }
 }
-

@@ -10,6 +10,7 @@
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Database\" />
     <None Remove="Repositories\" />
+    <None Remove="Database\Seeding\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
@@ -17,6 +18,7 @@
   <ItemGroup>
     <Folder Include="Database\" />
     <Folder Include="Repositories\" />
+    <Folder Include="Database\Seeding\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\List_Little_Domain\List_Little_Domain.csproj" />

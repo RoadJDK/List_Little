@@ -1,16 +1,14 @@
-﻿using System;
-namespace List_Little_Domain.Models
+﻿namespace List_Little_Domain.Models
 {
 	public class Person
 	{
-        Guid Id { get; set; }
-        int Number { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string Street { get; set; }
-        int PLZ { get; set; }
-        string Location { get; set; }
-        string EMail { get; set; }
-        FileStream Image { get; set; }
+        public Guid Id { get; set; }
+        public int Number { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Street { get; set; }
+        public int PLZ { get; set; }
+        public string Location { get; set; }
+        public string EMail { get; set; }
     }
 }
