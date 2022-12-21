@@ -9,14 +9,18 @@
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Database\" />
+    <None Remove="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\List_Little_Domain\List_Little_Domain.csproj" />
+    <ProjectReference Include="..\List_Little_Infrastructure_Contracts\List_Little_Infrastructure_Contracts.csproj" />
+    <ProjectReference Include="..\List_Little_CrossCutting\List_Little_CrossCutting.csproj" />
   </ItemGroup>
 </Project>

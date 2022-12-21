@@ -15,5 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\List_Little_Domain\List_Little_Domain.csproj" />
     <ProjectReference Include="..\List_Little_Business_Contracts\List_Little_Business_Contracts.csproj" />
+    <ProjectReference Include="..\List_Little_Infrastructure\List_Little_Infrastructure.csproj" />
   </ItemGroup>
 </Project>

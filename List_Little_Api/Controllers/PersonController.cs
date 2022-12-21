@@ -1,4 +1,6 @@
-﻿using List_Little_Api.DTOs;
+﻿using AutoMapper;
+using List_Little_Api.DTOs;
+using List_Little_Business_Contracts.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +10,15 @@ namespace List_Little_Api.Controllers;
 [Route("[controller]")]
 public class PersonController : ControllerBase
 {
-    private readonly ILogger<PersonController> _logger;
+    private readonly IPersonService Service;
+    private readonly IMapper Mapper;
+    private readonly ILogger<PersonController> Logger;
 
-    public PersonController(ILogger<PersonController> logger)
+    public PersonController(IPersonService service, IMapper mapper, ILogger<PersonController> logger)
     {
-        _logger = logger;
+        Service = service;
+        Mapper = mapper;
+        Logger = logger;
     }
 
     [HttpGet]
@@ -20,7 +26,9 @@ public class PersonController : ControllerBase
     {
         try
         {
-            return Ok();
+            var personList = Service.GetAll();
+            var mappedEntities = Mapper.Map<Person>(personList);
+            return Ok(personList);
         }
         catch (Exception)
         {

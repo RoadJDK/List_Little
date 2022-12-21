@@ -1,8 +1,16 @@
 ﻿using System.Text.Json;
+using List_Little_Business.Services;
+using List_Little_Business_Contracts.Services;
+using List_Little_Infrastructure.Repositories;
+using List_Little_Infrastructure_Contracts.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddTransient<IPersonService, PersonService>();
+builder.Services.AddTransient<IPersonRepository, PersonRepository>();
 
 builder.Services.AddAuthentication()
      .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
@@ -18,13 +26,12 @@ builder.Services.AddAuthentication()
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
