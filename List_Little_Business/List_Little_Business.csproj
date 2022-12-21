@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\List_Little_Domain\List_Little_Domain.csproj" />
+    <ProjectReference Include="..\List_Little_Business_Contracts\List_Little_Business_Contracts.csproj" />
+  </ItemGroup>
 </Project>
