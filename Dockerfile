@@ -10,7 +10,7 @@ RUN npm install
 
 RUN npm run build
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
 ENV DOTNET_URLS=http://+:5000
 
 WORKDIR /List_Little_Api
