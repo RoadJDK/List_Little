@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Security.Claims;
+using System.Text.Json;
 using List_Little_Business.Services;
 using List_Little_Business_Contracts.Services;
 using List_Little_Infrastructure.Database;
@@ -7,6 +8,7 @@ using List_Little_Infrastructure_Contracts.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,18 +20,30 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient<IPersonService, PersonService>();
 builder.Services.AddTransient<IPersonRepository, PersonRepository>();
 
-builder.Services.AddAuthentication()
-     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-     {
-         options.Authority = $"https://{builder.Configuration["Auth0:Domain"]}";
-         options.TokenValidationParameters =
-           new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-           {
-               ValidAudience = builder.Configuration["Auth0:Audience"],
-               ValidIssuer = $"{builder.Configuration["Auth0:Domain"]}"
-           };
-     });
-builder.Services.AddAuthorization();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.Authority = builder.Configuration["Auth0:Domain"];
+    options.Audience = builder.Configuration["Auth0:ClientId"];
+});
+
+builder.Services.AddAuthorization(o =>
+{
+    o.AddPolicy("Admin", p => p.
+        RequireAuthenticatedUser().
+        RequireClaim("permissions", "listlittle:read-write"));
+
+    o.AddPolicy("User1", p => p.
+        RequireAuthenticatedUser().
+        RequireClaim("permissions", "listlittle:read-write-one-eight"));
+
+    o.AddPolicy("User2", p => p.
+        RequireAuthenticatedUser().
+        RequireClaim("permissions", "listlittle:read-write-nine-sixteen"));
+});
 
 builder.Services.AddControllers();
 
@@ -52,7 +66,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

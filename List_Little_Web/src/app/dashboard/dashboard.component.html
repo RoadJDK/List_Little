@@ -5,7 +5,7 @@
       <nz-affix [nzOffsetTop]="offset">
         <h1><span>Hallo, </span> <span class="username">{{ user.name }}! </span> <span class="logout pointer" nz-icon nzType="logout" nzTheme="outline" (click)="logout()"></span></h1>
         <nz-input-group [nzPrefix]="suffixIconSearch" [nzSuffix]="inputClearTpl">
-          <input type="text" nz-input [(ngModel)]="personSearch" (ngModelChange)="onChange($event)" [nzAutocomplete]="auto" placeholder="Suche eine Person" />
+          <input type="text" nz-input [(ngModel)]="personSearch" [nzAutocomplete]="auto" (ngModelChange)="onChange($event)" placeholder="Suche eine Person" />
           <nz-autocomplete [nzDataSource]="filteredOptions" nzBackfill #auto></nz-autocomplete>
         </nz-input-group>
         <ng-template #inputClearTpl>
@@ -23,24 +23,24 @@
         </ng-template>
       </nz-affix>
     </ng-container>
-    <ng-container *ngFor="let person of filteredOptions">
+    <ng-container *ngFor="let person of filteredPersonList">
       <nz-card class="card">
         <div nz-row>
           <div nz-col nzSpan="6">
-            <p class="title">{{ person }}</p>
+            <p class="title">{{ person.firstName }} {{ person.lastName }}</p>
             <img
             class="pointer"
             nz-image
             width="100px"
             height="100px"
-            nzSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            nzSrc={{person.imagePath}}
             alt=""
           />
           </div>
           <div nz-col nzSpan="12">
-            <p>Wiesenstrasse 54</p>
-            <p>3014 Bern</p>
-            <p>lac121115@iet-gibb.ch</p>
+            <p>{{ person.street }}</p>
+            <p>{{ person.plz }} {{ person.location }}</p>
+            <p>{{ person.eMail }}</p>
           </div>
         </div>
       </nz-card>

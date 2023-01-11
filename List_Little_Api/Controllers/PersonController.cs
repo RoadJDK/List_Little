@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace List_Little_Api.Controllers;
 
+[Authorize(Policy = "Admin")]
 [ApiController]
 [Route("[controller]")]
 public class PersonController : ControllerBase

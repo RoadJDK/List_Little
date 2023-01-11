@@ -72,6 +72,127 @@ namespace List_Little_Infrastructure.Database.Seeding
                     Location = "Därligen",
                     EMail = "jce121133@iet-gibb.ch"
                 },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 6,
+                    FirstName = "Yann Cédric",
+                    LastName = "Flückiger",
+                    Street = "Untergasse 13",
+                    PLZ = 2514,
+                    Location = "Ligerz",
+                    EMail = "yfl121149@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 7,
+                    FirstName = "Roman",
+                    LastName = "Fäh",
+                    Street = "Bürglenweg 2",
+                    PLZ = 3063,
+                    Location = "Ittigen",
+                    EMail = "rfa121145@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 8,
+                    FirstName = "Rehan",
+                    LastName = "Ghani",
+                    Street = "Linckweg 2",
+                    PLZ = 3052,
+                    Location = "Zollikofen",
+                    EMail = "rgh104545@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 9,
+                    FirstName = "Adshran",
+                    LastName = "Kirubakaran",
+                    Street = "Solothurnstrasse 41",
+                    PLZ = 3303,
+                    Location = "Jegenstorf",
+                    EMail = "aki120465@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 10,
+                    FirstName = "Lukas",
+                    LastName = "Küffer",
+                    Street = "Chaletweg 15",
+                    PLZ = 3174,
+                    Location = "Thörishaus",
+                    EMail = "lfr120333@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 11,
+                    FirstName = "Timo",
+                    LastName = "Maibach",
+                    Street = "Bäumlisacker 10",
+                    PLZ = 3033,
+                    Location = "Wohlen b. Bern",
+                    EMail = "tma120535@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 12,
+                    FirstName = "Besart",
+                    LastName = "Memeti",
+                    Street = "Bernstrasse 28",
+                    PLZ = 3175,
+                    Location = "Flamatt",
+                    EMail = "bme121189@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 13,
+                    FirstName = "Nicolas Yann",
+                    LastName = "Monigadon",
+                    Street = "Dorfstrasse 30",
+                    PLZ = 3116,
+                    Location = "Kirchdorf BE",
+                    EMail = "nmo121191@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 14,
+                    FirstName = "Patrick",
+                    LastName = "Nyffenegger",
+                    Street = "Ahornweg 3",
+                    PLZ = 3254,
+                    Location = "Messen",
+                    EMail = "pny120616@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 15,
+                    FirstName = "Noel",
+                    LastName = "Rasiah",
+                    Street = "Etzmattrain 28",
+                    PLZ = 3322,
+                    Location = "Urtenen-Schönbühl",
+                    EMail = "nra120655@iet-gibb.ch"
+                },
+                new Person
+                {
+                    Id = Guid.NewGuid(),
+                    Number = 16,
+                    FirstName = "Adrian",
+                    LastName = "Spycher",
+                    Street = "Nord-Südstrasse 6",
+                    PLZ = 4543,
+                    Location = "Deitingen",
+                    EMail = "asp121206@iet-gibb.ch"
+                },
             };
 		}
 	}
