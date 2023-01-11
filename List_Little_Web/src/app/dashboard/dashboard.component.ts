@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { Auth0Client } from '@auth0/auth0-spa-js';
 import { lastValueFrom, take } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { PersonService } from 'src/shared/person.service';
 import { Person } from '../models/person';
 
@@ -49,6 +49,6 @@ export class DashboardComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout({returnTo: 'https://localhost:7075/'})
+    this.auth.logout({returnTo: environment.auth.redirectUri})
   }
 }

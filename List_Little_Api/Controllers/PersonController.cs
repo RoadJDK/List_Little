@@ -27,9 +27,24 @@ public class PersonController : ControllerBase
     {
         try
         {
-            var personList = Service.GetAll();
-            var mappedEntities = personList.Select(Mapper.Map<Person>);
-            return Ok(personList);
+            if (User.HasClaim("permissions", "listlittle:read-write"))
+            {
+                var personList = Service.GetAll();
+                return Ok(personList);
+            }
+            else if (User.HasClaim("permissions", "listlittle:read-write-one-eight"))
+            {
+                var personList = Service.GetAll();
+                var sortedList = personList.OrderBy(p => p.Number).Take(8);
+                return Ok(sortedList);
+            }
+            else if (User.HasClaim("permissions", "listlittle:read-write-nine-sixteen"))
+            {
+                var personList = Service.GetAll();
+                var sortedList = personList.OrderByDescending(p => p.Number).Take(8);
+                return Ok(sortedList);
+            }
+            return BadRequest();
         }
         catch (Exception)
         {

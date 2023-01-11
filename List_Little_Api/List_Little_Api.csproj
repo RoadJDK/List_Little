@@ -34,10 +34,12 @@
     <None Remove="Npgsql" />
     <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
     <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL.Design" />
+    <None Remove="Authorization\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="Mapping\" />
+    <Folder Include="Authorization\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\List_Little_Domain\List_Little_Domain.csproj">
