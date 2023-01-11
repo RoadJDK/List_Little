@@ -27,11 +27,15 @@ builder.Services.AddAuthentication(options =>
 }).AddJwtBearer(options =>
 {
     options.Authority = builder.Configuration["Auth0:Domain"];
-    options.Audience = builder.Configuration["Auth0:ClientId"];
+    options.Audience = builder.Configuration["Auth0:Audience"];
 });
 
 builder.Services.AddAuthorization(o =>
 {
+    o.AddPolicy("Access", p => p.
+        RequireAuthenticatedUser().
+        RequireClaim("permissions", "listlittle:access"));
+
     o.AddPolicy("Admin", p => p.
         RequireAuthenticatedUser().
         RequireClaim("permissions", "listlittle:read-write"));
