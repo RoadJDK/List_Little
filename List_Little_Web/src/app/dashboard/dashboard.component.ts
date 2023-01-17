@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { lastValueFrom, take } from 'rxjs';
+import {lastValueFrom, map, take} from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { PersonService } from 'src/shared/person.service';
 import { Person } from '../models/person';
