@@ -1,15 +1,10 @@
-﻿using System.Security.Claims;
-using System.Text.Json;
-using List_Little_Business.Services;
+﻿using List_Little_Business.Services;
 using List_Little_Business_Contracts.Services;
 using List_Little_Infrastructure.Database;
 using List_Little_Infrastructure.Repositories;
 using List_Little_Infrastructure_Contracts.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
