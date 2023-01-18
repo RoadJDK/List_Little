@@ -27,4 +27,3 @@ namespace List_Little_Infrastructure.Repositories
         }
     }
 }
-
